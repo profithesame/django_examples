@@ -47,3 +47,4 @@ package.json
 
 *.sqlite3
 secret_key.py
+smtp_settings.py
