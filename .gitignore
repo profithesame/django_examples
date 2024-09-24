@@ -45,6 +45,8 @@ package.json
 /src/
 /venv/
 
+migrations/
+
 *.sqlite3
 secret_key.py
 smtp_settings.py
