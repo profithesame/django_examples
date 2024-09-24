@@ -26,6 +26,7 @@ def post_detail(request, year, month, day, post):
         # EDIT let only registred users to make comment
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
+            pass
             # new_comment = comment_form.save(commit=False)
             # new_comment.post = post
             # new_comment.save()
