@@ -6,6 +6,12 @@
         Published {{ post.publish }} by {{ post.author }}
     </p>
 
+    {{ post.body|linebreaks }}
+    
+    <p>
+        <a href="{% url "blog:post_share" post.id %}">Share this post</a>
+    </p>
+
     <!-- comments block -->
     {% with comments.count as total_comments %}
     <h2>
@@ -35,8 +41,4 @@
             <p><input type="submit" value="Add comment"></p>
         </form>
     {% endif %}
-{{ post.body|linebreaks }}
-    <p>
-        <a href="{% url "blog:post_share" post.id %}">Share this post</a>
-    </p>
 {% endblock %}
