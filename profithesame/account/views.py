@@ -1,30 +1,24 @@
 from django.http import HttpResponse, HttpRequest
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 
-from .forms import LoginForm
 
+@login_required
+def dashboard(request:HttpRequest):
+    return render(
+        request,
+        'account/dashboard.html',
+        {
+            'section': 'dashboard',
+        }
+    )
 
-def user_login(request:HttpRequest):
-    if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            cd = form.cleaned_data
-            user = authenticate(
-                request,
-                username=cd['username'],
-                password=cd['password'],
-            )
+def user_logout(request:HttpRequest):
+    logout(request)
 
-            if user:
-                if user.is_active:
-                    login(request, user)
-                    return HttpResponse('Authenticated successfully')
-                else:
-                    return HttpResponse('Disabled account')
-            else:
-                return HttpResponse('Invalid login')
-    else: 
-        form = LoginForm()
-    
-    return render(request, 'account/login.html', {'form': form})
+    return render(
+        request,
+        'registration/logged_out.html',
+        {}
+    )

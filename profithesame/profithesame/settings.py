@@ -21,6 +21,10 @@ from .smtp_settings import (
     EMAIL_USE_TLS,
 )
 
+LOGIN_REDIRECCT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +42,7 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +53,6 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'blog',
     'taggit',
-    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
