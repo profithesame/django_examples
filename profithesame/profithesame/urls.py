@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from django.contrib.sitemaps.views import sitemap
+from django.conf import settings
+from django.conf.urls.static import static
+
 from blog.sitemaps import PostSitemap
 
 sitemaps = {
@@ -34,3 +37,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemaps'),
     path('account/', include('account.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT)

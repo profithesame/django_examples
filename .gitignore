@@ -46,6 +46,7 @@ package.json
 /venv/
 
 migrations/
+media/
 
 *.sqlite3
 secret_key.py
