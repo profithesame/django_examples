@@ -21,7 +21,9 @@ from .smtp_settings import (
     EMAIL_USE_TLS,
 )
 
-LOGIN_REDIRECCT_URL = 'dashboard'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
