@@ -12,7 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
-from .secret_key import SECRET_KEY
+from .secret_key import (
+    SECRET_KEY,
+    SOCIAL_AUTH_FACEBOOK_KEY,
+    SOCIAL_AUTH_FACEBOOK_SECRET,
+)
 from .smtp_settings import (
     EMAIL_HOST,
     EMAIL_HOST_PASSWORD,
@@ -21,9 +25,12 @@ from .smtp_settings import (
     EMAIL_USE_TLS,
 )
 
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -63,6 +70,8 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'blog',
     'taggit',
+    'social_django',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
