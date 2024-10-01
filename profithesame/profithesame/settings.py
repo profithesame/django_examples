@@ -92,6 +92,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'images.apps.ImagesConfig',
     'corsheaders',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
