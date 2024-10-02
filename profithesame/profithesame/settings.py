@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import os
 from pathlib import Path
+
+from django.urls import reverse_lazy
+
 from .secret_key import (
     SECRET_KEY,
     SOCIAL_AUTH_FACEBOOK_KEY,
@@ -24,6 +27,11 @@ from .smtp_settings import (
     EMAIL_PORT,
     EMAIL_USE_TLS,
 )
+
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
+}
 
 SOCIAL_AUTH_PIPELINE = [
     'social_core.pipeline.social_auth.social_details',
