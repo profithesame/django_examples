@@ -65,6 +65,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type('application/javascript', '.js', True)
+    mimetypes.add_type('text/css', '.css', True)
+
 ALLOWED_HOSTS = ['*']
 
 SITE_ID = 1
@@ -85,9 +90,13 @@ INSTALLED_APPS = [
     'taggit',
     'social_django',
     'django_extensions',
+    'images.apps.ImagesConfig',
+    'corsheaders',
+    'easy_thumbnails',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -96,6 +105,28 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'https://127.0.0.1:8443',
+    'http://127.0.0.1:8000',
+    'https://mysite.com:8443',
+    'http://mysite.com:8000',
+]
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST',
+    'OPTIONS',
+    #'PUT',
+    #'DELETE',
+]
+CORS_ALLOWED_HEADERS = [
+    'Content-Type',
+    'origin',
+    'Cross-Origin',
+#    'Authorization',
+]
+CORS_MAX_AGE = 86400  # 24 часа
 
 ROOT_URLCONF = 'profithesame.urls'
 
