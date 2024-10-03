@@ -101,6 +101,7 @@ INSTALLED_APPS = [
     'images.apps.ImagesConfig',
     'corsheaders',
     'easy_thumbnails',
+    'actions.apps.ActionsConfig',
 ]
 
 MIDDLEWARE = [
