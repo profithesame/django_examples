@@ -102,6 +102,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'easy_thumbnails',
     'actions.apps.ActionsConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [
