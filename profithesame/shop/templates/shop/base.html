@@ -13,7 +13,17 @@
         </div>
         <div id="subheader">
             <div class="cart">
-                Your cart is empty. You can try to fill it (-:
+                {% with total_items=cart|length %}
+                    {% if total_items > 0 %}
+                        Your cart:
+                        <a href="{% url "cart:cart_detail" %}">
+                            {{ total_items }} item{{ total_items|pluralize }},
+                            MDL {{ cart.get_total_price }}
+                        </a>
+                    {% else %}
+                        Your cart is empty. You can try to fill it (-:
+                    {% endif %}
+                {% endwith %}
             </div>
         </div>
         <div id="content">
