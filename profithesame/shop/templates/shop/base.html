@@ -20,7 +20,7 @@
                             {{ total_items }} item{{ total_items|pluralize }},
                             MDL {{ cart.get_total_price }}
                         </a>
-                    {% else %}
+                    {% elif not order %}
                         Your cart is empty. You can try to fill it (-:
                     {% endif %}
                 {% endwith %}
