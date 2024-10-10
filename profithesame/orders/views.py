@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
+from django.urls import reverse
 
 from .models import OrderItem
 from .forms import OrderCreateForm
@@ -22,6 +23,10 @@ def order_create(request:HttpRequest):
                 )
 
             cart.clear()
+
+            request.session['order_id'] = order.id
+
+            return redirect(reverse('payment:process'))
 
             return render(
                 request,

@@ -19,6 +19,9 @@ from .secret_key import (
     SECRET_KEY,
     SOCIAL_AUTH_FACEBOOK_KEY,
     SOCIAL_AUTH_FACEBOOK_SECRET,
+    STRIPE_PUBLISHABLE_KEY,
+    STRIPE_API_VERSION,
+    STRIPE_SECRET_KEY,
 )
 from .smtp_settings import (
     EMAIL_HOST,
@@ -105,6 +108,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 ]
 
 MIDDLEWARE = [
