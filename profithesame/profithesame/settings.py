@@ -22,6 +22,7 @@ from .secret_key import (
     STRIPE_PUBLISHABLE_KEY,
     STRIPE_API_VERSION,
     STRIPE_SECRET_KEY,
+    STRIPE_WEBHOOK_SECRET,
 )
 from .smtp_settings import (
     EMAIL_HOST,
