@@ -1,6 +1,7 @@
 import csv
 import datetime
 
+from django.urls import reverse
 from django.contrib import admin
 from django.http import HttpResponse, HttpRequest
 from django.utils.safestring import mark_safe
@@ -45,10 +46,15 @@ class OrderItemInline(admin.TabularInline):
     model = OrderItem
     raw_id_fields = ['product']
 
+def order_detail(obj:Order):
+    url = reverse('orders:admin_order_detail', args=[obj.id])
+    return mark_safe(f'<a href="{url}">View</a>')
+
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'last_name', 'email', 'address',
         'postal_code', 'city', 'paid', 'created', 'updated', order_payment,
+        order_detail,
     ]
     list_filter = ['paid', 'created', 'updated']
     inlines = [OrderItemInline]

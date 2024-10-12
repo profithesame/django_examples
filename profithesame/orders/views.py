@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpRequest, HttpResponse
 from django.urls import reverse
+from django.contrib.admin.views.decorators import staff_member_required
 
-from .models import OrderItem
+from .models import OrderItem, Order
 from .forms import OrderCreateForm
 
 from cart.cart import Cart
@@ -46,3 +47,14 @@ def order_create(request:HttpRequest):
                 'form': form,
             }
         )
+
+@staff_member_required
+def admin_order_detail(request:HttpRequest, order_id:int) -> HttpResponse:
+    order = get_object_or_404(Order, id=order_id)
+    return render(
+        request,
+        'admin/orders/order/detail.html',
+        {
+            'order': order,
+        }
+    )
