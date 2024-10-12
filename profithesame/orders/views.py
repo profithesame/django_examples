@@ -74,7 +74,6 @@ def admin_order_pdf(request:HttpRequest, order_id:int) -> HttpResponse:
     )
     response = HttpResponse(content_type='application/pdf')
     response['Content-Disposition'] = f'filename=order_{order.id}.pdf'
-    # EDIT weasyprint.CSS doesn't working on win server
     weasyprint.HTML(string=html).write_pdf(
         response,
         stylesheets=[weasyprint.CSS(
