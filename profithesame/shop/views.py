@@ -4,6 +4,7 @@ from django.http import HttpRequest, HttpResponse
 from cart.forms import CartAddProductForm
 
 from .models import Category, Product
+from .recommender import Recommender
 
 
 def product_list(request:HttpRequest, category_slug=None) -> HttpResponse:
@@ -36,11 +37,15 @@ def product_detail(request:HttpRequest, id, slug) -> HttpResponse:
     )
     cart_product_form = CartAddProductForm
 
+    r = Recommender()
+    recommended_products = r.suggest_products_for([product], 4)
+
     return render(
         request,
         'shop/product/detail.html',
         {
             'product': product,
             'cart_product_form': cart_product_form,
+            'recommended_products': recommended_products,
         }
     )    
