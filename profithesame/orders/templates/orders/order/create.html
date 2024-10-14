@@ -15,8 +15,14 @@
                     <span>MDL {{ item.total_price }}</span>
                 </li>
             {% endfor %}
+            {% if cart.coupon %}
+                <li>
+                    "{{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
+                    <span class="neg">- MDL {{ cart.get_discount|floatformat:2 }}</span>
+                </li>
+            {% endif %}
         </ul>
-        <p>Total: MDL {{ cart.get_total_price }}</p>
+        <p>Total: MDL {{ cart.get_total_price_after_discount|floatformat:2 }}</p>
     </div>
     <form method="post" class="order-form">
         {{ form.as_p }}
