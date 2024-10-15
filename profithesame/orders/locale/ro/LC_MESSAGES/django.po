@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 15:11+0300\n"
+"POT-Creation-Date: 2024-10-15 15:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,14 +56,18 @@ msgstr "Comanda dumneavoastră"
 #, python-format
 msgid ""
 "\n"
-"                        \"%(code)s\" (%(discount)s%% off)\n"
-"                    "
+"                        \"%(code)s\" (%(discount)s%% off)\n"
+"                    "
 msgstr ""
 
 #: .\orders\templates\orders\order\create.html:29
 #: .\orders\templates\orders\order\pdf.html:56
 msgid "Total"
 msgstr "Total"
+
+#: .\orders\templates\orders\order\create.html:34
+msgid "Place order"
+msgstr "Plasați comanda"
 
 #: .\orders\templates\orders\order\created.html:6
 #: .\orders\templates\orders\order\created.html:10
@@ -72,7 +76,8 @@ msgstr "Mulțumim"
 
 #: .\orders\templates\orders\order\created.html:11
 msgid "Your order has been successfully completed. Your order number is"
-msgstr "Comanda dumneavoastră a fost finalizată cu succes. Numărul comenzii este"
+msgstr ""
+"Comanda dumneavoastră a fost finalizată cu succes. Numărul comenzii este"
 
 #: .\orders\templates\orders\order\pdf.html:4
 msgid "Moldova gel shop"
@@ -114,8 +119,8 @@ msgstr "Subtotal"
 #, python-format
 msgid ""
 "\n"
-"                                \"%(code)s\" (%(discount)s%% off)\n"
-"                            "
+"                                \"%(code)s\" (%(discount)s%% off)\n"
+"                            "
 msgstr ""
 
 #: .\orders\templates\orders\order\pdf.html:62

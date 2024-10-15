@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 15:01+0300\n"
+"POT-Creation-Date: 2024-10-15 15:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -89,10 +89,11 @@ msgstr "Итоговая сумма без скидки"
 #, python-format
 msgid ""
 "\n"
-"                        \"%(code)s\" coupon (%(discount)s%% off)\n"
-"                    "
-msgstr ""  # This line doesn't need translation
+"                        \"%(code)s\" coupon (%(discount)s%% off)\n"
+"                    "
+msgstr ""
 
+# This line doesn't need translation
 #: .\cart\templates\cart\detail.html:71
 #: .\payment\templates\payment\process.html:18
 #: .\payment\templates\payment\process.html:54
@@ -155,10 +156,11 @@ msgstr "Краткое содержание заказа"
 #, python-format
 msgid ""
 "\n"
-"                          \"%(code)s\" (%(discount)s%% off)\n"
-"                        "
-msgstr ""  # This line doesn't need translation
+"                          \"%(code)s\" (%(discount)s%% off)\n"
+"                        "
+msgstr ""
 
+# This line doesn't need translation
 #: .\payment\templates\payment\process.html:63
 msgid "Pay now"
 msgstr "Оплатить сейчас"
@@ -187,12 +189,12 @@ msgstr "Ваша корзина"
 #, python-format
 msgid ""
 "\n"
-"                                %(items)s item, MDL %(total)s\n"
-"                            "
+"                                %(items)s item, MDL %(total)s\n"
+"                            "
 msgid_plural ""
 "\n"
-"                                %(items)s items, MDL %(total)s\n"
-"                            "
+"                                %(items)s items, MDL %(total)s\n"
+"                            "
 msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
