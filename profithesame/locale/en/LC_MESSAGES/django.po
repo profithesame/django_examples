@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 15:01+0300\n"
+"POT-Creation-Date: 2024-10-15 17:38+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -161,17 +161,53 @@ msgstr ""
 msgid "Pay now"
 msgstr ""
 
-#: .\profithesame\settings.py:216
+#: .\payment\urls.py:11
+msgid "process/"
+msgstr ""
+
+#: .\payment\urls.py:12
+msgid "completed/"
+msgstr ""
+
+#: .\payment\urls.py:13
+msgid "canceled/"
+msgstr ""
+
+#: .\profithesame\settings.py:217
 msgid "English"
 msgstr "English"
 
-#: .\profithesame\settings.py:217
+#: .\profithesame\settings.py:218
 msgid "Romanian"
 msgstr "Romanian"
 
-#: .\profithesame\settings.py:218
+#: .\profithesame\settings.py:219
 msgid "Russian"
 msgstr "Russian"
+
+#: .\profithesame\urls.py:41
+msgid "account/"
+msgstr ""
+
+#: .\profithesame\urls.py:44
+msgid "images/"
+msgstr ""
+
+#: .\profithesame\urls.py:45
+msgid "cart/"
+msgstr ""
+
+#: .\profithesame\urls.py:46
+msgid "orders/"
+msgstr ""
+
+#: .\profithesame\urls.py:47
+msgid "payment/"
+msgstr ""
+
+#: .\profithesame\urls.py:48
+msgid "coupons/"
+msgstr ""
 
 #: .\shop\templates\shop\base.html:8 .\shop\templates\shop\base.html:13
 msgid "Moldova gel shop"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-15 15:47+0300\n"
+"POT-Creation-Date: 2024-10-15 17:38+0300\n"
 "PO-Revision-Date: 2024-10-15 15:58+0000\n"
 "Last-Translator: Vladimir Sinchevici <profi.net.md@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
 #: .\account\templates\base.html:12
@@ -163,17 +164,59 @@ msgstr ""
 msgid "Pay now"
 msgstr "Plătește acum"
 
-#: .\profithesame\settings.py:216
+#: .\payment\urls.py:11
+msgid "process/"
+msgstr "processare/"
+
+#: .\payment\urls.py:12
+msgid "completed/"
+msgstr "finalizat/"
+
+#: .\payment\urls.py:13
+#, fuzzy
+#| msgid "Payment canceled"
+msgid "canceled/"
+msgstr "Plata anulată"
+
+#: .\profithesame\settings.py:217
 msgid "English"
 msgstr "Engleză"
 
-#: .\profithesame\settings.py:217
+#: .\profithesame\settings.py:218
 msgid "Romanian"
 msgstr "Română"
 
-#: .\profithesame\settings.py:218
+#: .\profithesame\settings.py:219
 msgid "Russian"
 msgstr "Rusă"
+
+#: .\profithesame\urls.py:41
+msgid "account/"
+msgstr "cont/"
+
+#: .\profithesame\urls.py:44
+#, fuzzy
+#| msgid "Images"
+msgid "images/"
+msgstr "Imagini"
+
+#: .\profithesame\urls.py:45
+msgid "cart/"
+msgstr ""
+
+#: .\profithesame\urls.py:46
+msgid "orders/"
+msgstr "comenzi"
+
+#: .\profithesame\urls.py:47
+msgid "payment/"
+msgstr ""
+
+#: .\profithesame\urls.py:48
+#, fuzzy
+#| msgid "Coupon"
+msgid "coupons/"
+msgstr "Cupon"
 
 #: .\shop\templates\shop\base.html:8 .\shop\templates\shop\base.html:13
 msgid "Moldova gel shop"

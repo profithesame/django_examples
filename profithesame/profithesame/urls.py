@@ -16,18 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+from django.utils.translation import gettext_lazy as _
 from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 from blog.sitemaps import PostSitemap
+from payment import webhooks
 
 sitemaps = {
     'posts': PostSitemap,
 }
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
     re_path(r'^blog/', include('blog.urls')),
     re_path(
@@ -35,17 +38,20 @@ urlpatterns = [
         sitemap,
         {'sitemaps':sitemaps},
         name='django.contrib.sitemaps.views.sitemaps'),
-    path('account/', include('account.urls')),
+    path(_('account/'), include('account.urls')),
     path('social-auth/',
         include('social_django.urls', namespace='social')),
-    path('images/', include('images.urls', namespace='images')),
-    path('cart/', include('cart.urls', namespace='cart')),
-    path('orders/', include('orders.urls', namespace='orders')),
-    path('payment/', include('payment.urls', namespace='payment')),
-    path('coupons/', include('coupons.urls', namespace='coupons')),
+    path(_('images/'), include('images.urls', namespace='images')),
+    path(_('cart/'), include('cart.urls', namespace='cart')),
+    path(_('orders/'), include('orders.urls', namespace='orders')),
+    path(_('payment/'), include('payment.urls', namespace='payment')),
+    path(_('coupons/'), include('coupons.urls', namespace='coupons')),
     path('rosetta', include('rosetta.urls')),
     path('', include('shop.urls', namespace='shop')),
-]
+)
+
+urlpatterns += [path('payment/webhook/', webhooks.stripe_webhook,
+    name='stripe-webhook')]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
