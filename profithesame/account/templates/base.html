@@ -1,3 +1,5 @@
+{% load i18n %}
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -7,26 +9,26 @@
 </head>
 <body>
     <div id="header">
-        <span class="logo">Bookmarks</span>
+        <span class="logo">{% trans "Bookmarks" %}</span>
         {% if request.user.is_authenticated %}
         <ul class="menu">
             <li {% if section == "dashboard" %}class="selected"{% endif %}>
-                <a href="{% url "dashboard" %}">My dashboard</a>
+                <a href="{% url "dashboard" %}">{% trans "My dashboard" %}</a>
             </li>
             <li {% if section == "images" %}class="selected"{% endif %}>
-                <a href="{% url "images:list" %}">Images</a>
+                <a href="{% url "images:list" %}">{% trans "Images" %}</a>
             </li>
             <li {% if section == "people" %}class="selected"{% endif %}>
-                <a href="{% url "user_list" %}">People</a>
+                <a href="{% url "user_list" %}">{% trans "People" %}</a>
             </li>
         </ul>
         {% endif %}
         <span class="user">
             {% if request.user.is_authenticated %}
               Hello {{ request.user.first_name|default:request.user.username }},
-                <a href="{% url "logout" %}">Logout</a>
+                <a href="{% url "logout" %}">{% trans "Logout" %}</a>
             {% else %}
-                <a href="{% url "login" %}">Log-in</a>
+                <a href="{% url "login" %}">{% trans "Log-in" %}</a>
             {% endif %}
         </span>
     </div>

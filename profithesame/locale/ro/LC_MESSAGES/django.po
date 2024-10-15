@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-15 15:01+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: .\account\templates\base.html:12
+msgid "Bookmarks"
+msgstr "Marcaje"
+
+#: .\account\templates\base.html:16
+msgid "My dashboard"
+msgstr "Tabloul meu de bord"
+
+#: .\account\templates\base.html:19
+msgid "Images"
+msgstr "Imagini"
+
+#: .\account\templates\base.html:22
+msgid "People"
+msgstr "Oameni"
+
+#: .\account\templates\base.html:29
+msgid "Logout"
+msgstr "Deconectare"
+
+#: .\account\templates\base.html:31
+msgid "Log-in"
+msgstr "Autentificare"
+
+#: .\cart\forms.py:11 .\cart\templates\cart\detail.html:18
+#: .\payment\templates\payment\process.html:17
+msgid "Quantity"
+msgstr "Cantitate"
+
+#: .\cart\templates\cart\detail.html:8 .\cart\templates\cart\detail.html:12
+msgid "Your shopping cart"
+msgstr "Coșul dumneavoastră de cumpărături"
+
+#: .\cart\templates\cart\detail.html:16
+#: .\payment\templates\payment\process.html:14
+msgid "Image"
+msgstr "Imagine"
+
+#: .\cart\templates\cart\detail.html:17
+#: .\payment\templates\payment\process.html:15
+msgid "Product"
+msgstr "Produs"
+
+#: .\cart\templates\cart\detail.html:19 .\cart\templates\cart\detail.html:43
+msgid "Remove"
+msgstr "Elimina"
+
+#: .\cart\templates\cart\detail.html:20
+msgid "Unit price"
+msgstr "Preț unitar"
+
+#: .\cart\templates\cart\detail.html:21
+#: .\payment\templates\payment\process.html:16
+msgid "Price"
+msgstr "Preț"
+
+#: .\cart\templates\cart\detail.html:37
+msgid "Update"
+msgstr "Actualiza"
+
+#: .\cart\templates\cart\detail.html:54
+#: .\payment\templates\payment\process.html:35
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: .\cart\templates\cart\detail.html:60
+#, python-format
+msgid ""
+"\n"
+"                        \"%(code)s\" coupon (%(discount)s%% off)\n"
+"                    "
+msgstr ""
+
+#: .\cart\templates\cart\detail.html:71
+#: .\payment\templates\payment\process.html:18
+#: .\payment\templates\payment\process.html:54
+msgid "Total"
+msgstr "Total"
+
+#: .\cart\templates\cart\detail.html:77
+msgid "Apply a coupon"
+msgstr "Aplică un cupon"
+
+#: .\cart\templates\cart\detail.html:80
+msgid "Apply"
+msgstr "Aplică"
+
+#: .\cart\templates\cart\detail.html:84
+msgid "Continue shopping"
+msgstr "Continuă cumpărăturile"
+
+#: .\cart\templates\cart\detail.html:85
+msgid "Checkout"
+msgstr "Finalizare comandă"
+
+#: .\coupons\forms.py:6
+msgid "Coupon"
+msgstr "Cupon"
+
+#: .\payment\templates\payment\canceled.html:5
+msgid "Payment canceled"
+msgstr "Plata anulată"
+
+#: .\payment\templates\payment\canceled.html:8
+msgid "Your payment has not been processed"
+msgstr "Plata dumneavoastră nu a fost procesată"
+
+#: .\payment\templates\payment\canceled.html:9
+msgid "There was a problem processing your payment"
+msgstr "A apărut o problemă la procesarea plății dumneavoastră"
+
+#: .\payment\templates\payment\completed.html:5
+msgid "Payment successful"
+msgstr "Plata efectuată cu succes"
+
+#: .\payment\templates\payment\completed.html:8
+msgid "Your payment was successful"
+msgstr "Plata dumneavoastră a fost efectuată cu succes"
+
+#: .\payment\templates\payment\completed.html:9
+msgid "Your payment has been processed successfully"
+msgstr "Plata dumneavoastră a fost procesată cu succes"
+
+#: .\payment\templates\payment\process.html:7
+msgid "Pay your order"
+msgstr "Plătește comanda"
+
+#: .\payment\templates\payment\process.html:10
+msgid "Order summary"
+msgstr "Rezumat comandă"
+
+#: .\payment\templates\payment\process.html:43
+#, python-format
+msgid ""
+"\n"
+"                          \"%(code)s\" (%(discount)s%% off)\n"
+"                        "
+msgstr ""  # This line doesn't need translation
+
+#: .\payment\templates\payment\process.html:63
+msgid "Pay now"
+msgstr "Plătește acum"
+
+#: .\profithesame\settings.py:216
+msgid "English"
+msgstr "Engleză"
+
+#: .\profithesame\settings.py:217
+msgid "Romanian"
+msgstr "Română"
+
+#: .\profithesame\settings.py:218
+msgid "Russian"
+msgstr "Rusă"
+
+#: .\shop\templates\shop\base.html:8 .\shop\templates\shop\base.html:13
+msgid "Moldova gel shop"
+msgstr "Magazin de geluri Moldova"
+
+#: .\shop\templates\shop\base.html:19
+msgid "Your cart"
+msgstr "Coșul dumneavoastră"
+
+#: .\shop\templates\shop\base.html:21
+#, python-format
+msgid ""
+"\n"
+"                                %(items)s item, MDL %(total)s\n"
+"                            "
+msgid_plural ""
+"\n"
+"                                %(items)s items, MDL %(total)s\n"
+"                            "
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: .\shop\templates\shop\base.html:28
+msgid "Your cart is empty. You can try to fill it"
+msgstr "Coșul dumneavoastră este gol. Puteți încerca să îl umpleți"
+
+#: .\shop\templates\shop\product\detail.html:24
+msgid "Add to cart"
+msgstr "Adaugă în coș"
+
+#: .\shop\templates\shop\product\list.html:8
+#: .\shop\templates\shop\product\list.html:28
+msgid "Products"
+msgstr "Produse"
+
+#: .\shop\templates\shop\product\list.html:13
+msgid "Categories"
+msgstr "Categorii"
+
+#: .\shop\templates\shop\product\list.html:16
+msgid "All"
+msgstr "Toate"
