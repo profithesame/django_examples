@@ -113,6 +113,7 @@ INSTALLED_APPS = [
     'payment.apps.PaymentConfig',
     'coupons.apps.CouponsConfig',
     'rosetta',
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -231,6 +232,18 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
+# django-parler settings
+PARLER_LANGUAGES = {
+    SITE_ID: (
+        {'code': 'en'},
+        {'code': 'ro'},
+        {'code': 'ru'},
+    ),
+    'default': {
+        'fallbacks': ['en'],
+        'hide_untranslated': False,
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
