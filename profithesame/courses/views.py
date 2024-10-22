@@ -16,10 +16,11 @@ from django.contrib.auth.mixins import (
     PermissionRequiredMixin,
 )
 from django.views.generic.base import TemplateResponseMixin, View
-from django.db.models import QuerySet
+from django.views.generic.detail import DetailView
+from django.db.models import QuerySet, Count
 from django.forms.models import modelform_factory
 
-from .models import Course, Module, Content
+from .models import Course, Module, Content, Subject
 from .forms import ModuleFormSet
 
 
@@ -114,6 +115,7 @@ class ContentOrderView(CsrfExemptMixin,
             }
         )
 
+
 class ModuleContentListView(TemplateResponseMixin, View):
     template_name = 'courses/manage/module/content_list.html'
 
@@ -207,3 +209,31 @@ class CourseUpdateView(OwnerCourseEditMixin, UpdateView):
 class CourseDeleteView(OwnerCourseMixin, DeleteView):
     template_name = 'courses/manage/course/delete.html'
     permission_required = 'course.delete_course'
+
+class CourseListView(TemplateResponseMixin, View):
+    model = Course
+    template_name = 'courses/course/list.html'
+
+    def get(self, request: HttpRequest, subject=None):
+        subjects = Subject.objects.annotate(
+            total_courses=Count('courses')
+        )
+        courses = Course.objects.annotate(
+            total_modules=Count('modules')
+        )
+
+        if subject:
+            subject = get_object_or_404(Subject, slug=subject)
+            courses - courses.filter(subject=subject)
+
+        return self.render_to_response(
+            {
+                'subjects': subjects,
+                'subject': subject,
+                'courses': courses,
+            }
+        )
+
+class CourseDetailView(DetailView):
+    model = Course
+    template_name = 'courses/course/detail.html'
