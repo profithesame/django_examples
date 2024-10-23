@@ -116,6 +116,7 @@ INSTALLED_APPS = [
     'parler',
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
