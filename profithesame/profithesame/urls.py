@@ -49,6 +49,7 @@ urlpatterns = i18n_patterns(
     path('rosetta', include('rosetta.urls')),
     path('course/', include('courses.urls')),
     path('students/', include('students.urls')),
+    path('api/', include('courses.api.urls', namespace='api')),
     path('', include('shop.urls', namespace='shop')),
 )
 
