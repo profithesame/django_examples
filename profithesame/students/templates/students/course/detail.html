@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load cache %}
+
 {% block title %}
     {{ object.title }}
 {% endblock %}
@@ -9,6 +11,7 @@
     <div class="contents">
         <h3>Modules</h3>
         <ul id="modules">
+            {% cache 600 module_contents module %}
             {% for m in object.modules.all %}
                 <li data-id="{{ m.id }}" {% if m == module %}class="selected"{% endif %}>
                     <a href="{% url "student_course_detail_module" object.id m.id %}">
@@ -22,6 +25,7 @@
             {% empty %}
                 <li>No modules yet.</li>
             {% endfor %}
+            {% endcache %}
         </ul>
     </div>
     <div class="module">

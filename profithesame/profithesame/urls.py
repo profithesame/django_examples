@@ -50,6 +50,7 @@ urlpatterns = i18n_patterns(
     path('course/', include('courses.urls')),
     path('students/', include('students.urls')),
     path('', include('shop.urls', namespace='shop')),
+    path('__debug__/', include('debug_toolbar.urls')),
 )
 
 urlpatterns += [path('payment/webhook/', webhooks.stripe_webhook,
