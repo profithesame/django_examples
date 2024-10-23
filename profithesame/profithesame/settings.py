@@ -115,6 +115,7 @@ INSTALLED_APPS = [
     'rosetta',
     'parler',
     'courses.apps.CoursesConfig',
+    'students.apps.StudentsConfig',
 ]
 
 MIDDLEWARE = [
