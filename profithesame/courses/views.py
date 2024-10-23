@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 
 from django.apps import apps
@@ -19,6 +19,8 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.detail import DetailView
 from django.db.models import QuerySet, Count
 from django.forms.models import modelform_factory
+
+from students.forms import CourseEnrollForm
 
 from .models import Course, Module, Content, Subject
 from .forms import ModuleFormSet
@@ -237,3 +239,12 @@ class CourseListView(TemplateResponseMixin, View):
 class CourseDetailView(DetailView):
     model = Course
     template_name = 'courses/course/detail.html'
+
+    def get_context_data(self, **kwargs: Any) -> Dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['enroll_form'] = CourseEnrollForm(
+            initial={
+                'course': self.object
+            }
+        )
+        return context
