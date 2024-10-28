@@ -50,6 +50,7 @@ urlpatterns = i18n_patterns(
     path('course/', include('courses.urls')),
     path('students/', include('students.urls')),
     path('api/', include('courses.api.urls', namespace='api')),
+    path('chat/', include('chat.urls', namespace='chat')),
     path('', include('shop.urls', namespace='shop')),
 )
 
