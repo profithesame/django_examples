@@ -10,8 +10,10 @@ from rest_framework.authentication import BasicAuthentication
 from rest_framework.permissions import IsAuthenticated
 
 from courses.models import Subject, Course
+from courses.api.permissions import IsEnrolled
 from courses.api.serializers import (SubjectSerializer, 
     CourseSerializer,
+    CourseWithContentsSerializer,
 )
 
 class SubjectListView(generics.ListAPIView):
@@ -39,3 +41,11 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
                 'enrolled': True,
             }
         )
+
+    @action(detail=True,
+            methods=['get'],
+            serializer_class=CourseWithContentsSerializer,
+            authentication_classes=[BasicAuthentication],
+            permission_classes=[IsAuthenticated, IsEnrolled])
+    def contents(self, request: HttpRequest, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
