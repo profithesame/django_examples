@@ -34,8 +34,6 @@ from .smtp_settings import (
 )
 
 
-ASGI_APPLICATION = 'profithesame.routing.application'
-
 ABSOLUTE_URL_OVERRIDES = {
     'auth.user': lambda u: reverse_lazy('user_detail', args=[u.username])
 }
@@ -98,6 +96,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'channels',
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
@@ -121,7 +120,6 @@ INSTALLED_APPS = [
     'embed_video',
     'rest_framework',
     'chat',
-    'channels',
 ]
 
 REST_FRAMEWORK = {
@@ -193,6 +191,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'profithesame.wsgi.application'
+ASGI_APPLICATION = 'profithesame.asgi.application'
 
 
 # Database
